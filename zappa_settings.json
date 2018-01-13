@@ -1,7 +1,7 @@
 {
     "dev": {
         "app_function": "app.app",
-        "aws_region": null,
+        "aws_region": "us-east-1",
         "profile_name": "zappa-deploy",
         "project_name": "conductor-skill",
         "runtime": "python2.7",
