@@ -10,6 +10,7 @@ app.config['ASK_APPLICATION_ID'] = skill_id
 
 DEADLINES = [
     'For Harvard University, the regular decision deadline is January 1, 2018.',
+    'For the University of Virginia, the regular decision deadline is January 1, 2018.',
     'For Yale University, the regular decision deadline is January 2, 2018.',
 ]
 
@@ -41,3 +42,20 @@ def get_school_deadlines(college):
 def session_ended():
     """Cleanly close the session."""
     return '{}', 200
+
+
+@ask.intent('AMAZON.CancelIntent')
+def cancel():
+    return statement('Goodbye')
+
+
+@ask.intent('AMAZON.HelpIntent')
+def help():
+    help_text = 'Ask us what school you would like deadlines for'
+    school_question = 'what school would you like deadlines for?'
+    return question(help_text).reprompt(school_question)
+
+
+@ask.intent('AMAZON.StopIntent')
+def stop():
+    return statement('Goodbye')
