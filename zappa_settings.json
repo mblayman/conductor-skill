@@ -13,6 +13,7 @@
         "profile_name": "zappa-deploy",
         "project_name": "conductor-skill",
         "runtime": "python2.7",
-        "s3_bucket": "zappa-7m7tblccu"
+        "s3_bucket": "zappa-7m7tblccu",
+        "log_level": "INFO"
     }
 }
